@@ -1,38 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 .App {
-  text-align: center;
+  background: linear-gradient(107.45deg, #000634 0.38%, #04060A 99.29%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.portal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.demoVideo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 50vh;
+  margin-top: 200px;
+  animation: right-to-left 1s ease-in-out forwards;
+  box-shadow: 30px 15px 5px 6px rgba(15, 15, 15, 0.3);
+  border-radius: 20px;
+  z-index: 900;
+}
+
+.portalAnimation {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  animation: left-to-right 1s ease-in-out forwards;
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-5%);
+    box-shadow: 8.0px 16.0px 16.0px hsl(0deg 0% 0% / 0.40);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes left-to-right {
+  100% {
+    /* transform: translateX(100%); */
+    filter: blur(48px);
+  }
+}
+
+header {
+  position: relative;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  position: absolute;
+  left: 0;
+  width: 60%;
+  margin-top: 15px;
+  text-decoration: none;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+  width: 160px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.link {
+  color: white;
+  max-width: 200px;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 900;
+}
+
+.selectedLink {
+  color: white;
+  max-width: 200px;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  z-index: 900;
+}
+
+.appLogo {
+  width: 50px;
+}
+
+@font-face {
+  font-family: Primus;
+  src: url(./fonts/Primus.otf);
+}
+
+h1 {
+  font-family: Primus;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 61px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+h2 {
+  font-family: Primus;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 61px;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.textContainer {
   display: flex;
   flex-direction: column;
+  justify-content: start;
+}
+
+.subText {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 29px;
+  letter-spacing: 0.04em;
+  color: #A9ABBC;
+  margin-top: -10px;
+}
+
+.subTextSpecs {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  width: 160px;
+}
+
+.subTextSpecsB {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  width: 220px;
+  margin-left: -60px;
+}
+
+.specsContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  flex-wrap: nowrap;
+  width: 450px;
+  margin-top: -30px;
+}
+
+.watchDemoBtn {
+  width: 180px;
+  height: 50px;
+  background: linear-gradient(94.74deg, #2C4AA6 9.44%, #423592 56.14%, #3970C4 100%);
+  color: white;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  cursor: pointer;
+  box-shadow: 8.0px 16.0px 16.0px rgba(50, 50, 50, 0.25);
+  text-decoration: none;
+}
+
+.arrow {
+  height: 15px;
+  margin-top: 17.5px;
+  margin-right: 5px;
+}
+
+.productsContainer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.productImage {
+  height: 50vh;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textContainer {
+  width: 40vw;
+  position: absolute;
+  margin-left: 110px;
+  margin-top: 250px;
 }
+
+.textContainerB {
+  width: 40vw;
+  margin-left: 60px;
+}
+
+.textContainerC {
+  width: 40vw;
+  margin-top: 10px;
+}
+
+.textContainerD {
+  width: 40vw;
+  margin-left: 30px;
+}
+
+.product {
+  height: 75vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.bLine {
+  width: 90vw;
+  height: 10px;
+}
+
+.outerProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
